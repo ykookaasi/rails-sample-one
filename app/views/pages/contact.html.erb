@@ -1,2 +1,20 @@
 <h1>Pages#contact</h1>
 <p>Find me in app/views/pages/contact.html.erb</p>
+<% members = [ 'Yoko', 'Grzegorz', 'Pedro', 'Luis', 'Stan' ] %>
+
+<h2>Meet our team</h2>
+
+<ol>
+ <% members.each do |member| %>
+  <li><%= member.capitalize %></li>
+ <% end %>
+</ol>
+
+<%= link_to 'About', about_path %>
+<%= link_to 'Contact', contact_path %>
+<%= link_to 'Home', root %>
+
+<form action="/contact" method="get">
+ <input type="text" name="member" placeholder="Who are you looking for?">
+ <input type="submit">
+</form>
